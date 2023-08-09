@@ -25,11 +25,11 @@ FROM registry.access.redhat.com/ubi8/python-39
     #mkdir -p ~/.config/rclone ; \
     #touch ~/.config/rclone/rclone.conf
 
-RUN curl -L -s \
-    https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.2.12/openshift-client-linux-4.2.12.tar.gz \
-    | tar -C /usr/local/bin/ -zxv oc kubectl ; \
-    chmod +x /usr/local/bin/oc ; \
-    chmod +x /usr/local/bin/kubectl
+#RUN curl -L -s \
+    #https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.2.12/openshift-client-linux-4.2.12.tar.gz \
+    #| tar -C /usr/local/bin/ -zxv oc kubectl ; \
+    #chmod +x /usr/local/bin/oc ; \
+    #chmod +x /usr/local/bin/kubectl
 
 ### RUN rclone rcd --rc-web-gui
 # RUN mkdir /container-scripts/ && cp /etc/passwd /container-scripts/ && chmod 666 /container-scripts/passwd
