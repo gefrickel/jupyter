@@ -10,20 +10,20 @@ FROM registry.access.redhat.com/ubi8/python-39
 # RUN microdnf install nss_wrapper gettext tar gzip -y \
 #     && microdnf clean all
 
-RUN dnf update -y && rm -rf /var/cache/yum
-RUN dnf install nss_wrapper gettext tar gzip unzip git dnsutils -y \
+#RUN dnf update -y && rm -rf /var/cache/yum
+#RUN dnf install nss_wrapper gettext tar gzip unzip git dnsutils -y \
     && dnf clean all
 
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" ; \
-    unzip awscliv2.zip ; \
-    mkdir /.aws ; \
-    chmod 777 /.aws ; \
-    ./aws/install
+#RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" ; \
+    #unzip awscliv2.zip ; \
+    #mkdir /.aws ; \
+    #chmod 777 /.aws ; \
+    #./aws/install
 
-RUN curl https://rclone.org/install.sh | bash ; \
-    mkdir -p ~/.config ; \
-    mkdir -p ~/.config/rclone ; \
-    touch ~/.config/rclone/rclone.conf
+#RUN curl https://rclone.org/install.sh | bash ; \
+    #mkdir -p ~/.config ; \
+    #mkdir -p ~/.config/rclone ; \
+    #touch ~/.config/rclone/rclone.conf
 
 RUN curl -L -s \
     https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.2.12/openshift-client-linux-4.2.12.tar.gz \
